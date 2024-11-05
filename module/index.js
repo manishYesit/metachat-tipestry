@@ -1941,6 +1941,14 @@ if (!document.getElementById('tip-ext-container')) {
     captchaValidateBox.style.setProperty('display', 'none');
   }
 
+  //Added functionality to close user dialog when clicking outside of it
+  $.addEventListener('click', (event) => {
+    if(!userDialog.contains(event.target) && !tipUser.contains(event.target)){
+      userDialog.style.animation = '';
+      userDialog.style.visibility = 'hidden';
+    }
+  })
+
   // Open Sign Up dialog
   newUser.onclick = function () {
     userClose.click();
@@ -6230,7 +6238,7 @@ if (!document.getElementById('tip-ext-container')) {
   }
 
   // Append User Login Dailog
-  userDialog.appendChild(userClose);
+  // userDialog.appendChild(userClose);
   userDialog.appendChild(dialogLabel);
   userDialog.appendChild(emailLabel);
   userDialog.appendChild(userEmail);

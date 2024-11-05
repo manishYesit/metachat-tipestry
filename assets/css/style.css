@@ -639,8 +639,8 @@ input {
 }
 
 .userDialog .rememberBox>input[type="checkbox"] {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   bottom: unset;
   cursor: pointer;
   appearance: none;

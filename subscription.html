@@ -1,0 +1,112 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Price Plan | MetaChat</title>
+  <link href="./assets/image/chat-icon.png" rel="shortcut icon" type="image/x-icon">
+
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
+  <link href="assets/fonts/fonts.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+  <!-- CSS -->
+</head>
+
+<body>
+  <div class="meta-price-wrap">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="meta-price-top">
+            <h1>Choose Your Plan</h1>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="meta-price-in">
+            <h1>Free</h1>
+            <p><b>Start After Registration</b></p>
+            <h2>$0 <span>/ month</span></h2>
+            <button class="btn" type="button" disabled>Current Plan</button>
+            <ul>
+              <li>
+                <img src="assets/image/price-plan/check.png" alt="">
+                10000 Tokens
+              </li>
+              <li>
+                <img src="assets/image/price-plan/check.png" alt="">
+                GPT-4o mini
+              </li>
+              <li class="fade-list">
+                <img src="assets/image/price-plan/lock.png" alt="">
+                GPT-4o
+              </li>
+              <li class="fade-list">
+                <img src="assets/image/price-plan/lock.png" alt="">
+                Dall-e-3
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="meta-price-in active">
+            <h1>Basic</h1>
+            <h2>$4.99 <span>/ month</span></h2>
+            <p>Cancel Anytime</p>
+            <button type="button" onclick="buyPlan()" class="btn">Get Started</button>
+            <ul>
+              <li>
+                <img src="assets/image/price-plan/check.png" alt="">
+                100000 Tokens
+              </li>
+              <li>
+                <img src="assets/image/price-plan/check.png" alt="">
+                GPT-4o mini
+              </li>
+              <li>
+                <img src="assets/image/price-plan/check.png" alt="">
+                GPT-4o
+              </li>
+              <li>
+                <img src="assets/image/price-plan/check.png" alt="">
+                Dall-e-3
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="./assets/js/axios.min.js"></script>
+
+<script>
+  async function buyPlan() {
+    try {
+      const token = window.localStorage.getItem('token');
+
+      if (token) {
+        const body = {
+          planId: 'price_1QBCoUBRukO0T7zIOasXJtlP',
+          source: 'metachat',
+        }
+
+        const planData = await axios.post('https://new.tipestry.com/api/user/checkout', body, {
+          headers: { "x-auth-token": JSON.parse(token).token },
+        });
+
+        localStorage.setItem("txnId", planData.data.session.id);
+
+        window.location.href = planData.data.session.url;
+      }
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
+</script>
+
+</html>

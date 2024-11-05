@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting | MetaChat</title>
+
+    <link href="./assets/image/chat-icon.png" rel="shortcut icon" type="image/x-icon">
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <h4 id="msg">Redirecting you at profile page...</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    async function redirect() {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.size) {
+                let token = urlParams.get('t');
+
+                if (token) {
+                    setTimeout(() => {
+                        window.location.href = "/profile";
+                    }, 2000);
+                } else {
+                    document.getElementById('msg').innerText = 'Something went wrong ):';
+                }
+            } else {
+                document.getElementById('msg').innerText = 'Something went wrong ):';
+            }
+        } catch (error) {
+            document.getElementById('msg').innerText = 'Something went wrong ):';
+        }
+    }
+
+    redirect();
+</script>
+
+</html>

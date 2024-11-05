@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email Address | MetaChat</title>
+
+    <link href="./assets/image/chat-icon.png" rel="shortcut icon" type="image/x-icon">
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="./assets/js/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <h4 id="msg">Verifing Email Address...</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    async function verifyEmail() {
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.size) {
+                let token = urlParams.get('t');
+
+                const result = await axios.post('https://new.tipestry.com/api/auth/verify', { token });
+
+                if (result) {
+                    localStorage.setItem("token", JSON.stringify({ token: result.headers["x-auth-token"] }));
+                }
+
+                setTimeout(() => {
+                    window.location.href = "/redirect?page=profile&t=" + result.headers["x-auth-token"];
+                }, 1000);
+            } else {
+                document.getElementById('msg').innerText = 'Your Session has expired';
+            }
+        } catch (error) {
+            document.getElementById('msg').innerText = 'Loading...';
+        }
+    }
+
+    verifyEmail();
+</script>
+
+</html>

@@ -1,0 +1,64 @@
+{
+    "id": "/",
+    "name": "MetaChat",
+    "scope": "/m/",
+    "display": "standalone",
+    "start_url": "/m/",
+    "short_name": "MetaChat",
+    "theme_color": "#FFFFFF",
+    "description": "Social Media App",
+    "background_color": "#FFFFFF",
+    "display_override": [
+        "window-controls-overlay"
+    ],
+    "icons": [
+        {
+            "src": "./assets/icon/logo_192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/icon/logo_256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/icon/logo_384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./assets/icon/logo_512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "features": [
+        "Cross Platform",
+        "fast",
+        "simple"
+    ],
+    "categories": [
+        "utility"
+    ],
+    "shortcuts": [
+        {
+            "name": "MetaChat",
+            "short_name": "MetaChat",
+            "description": "Social Media App",
+            "url": "/m/",
+            "icons": [
+                {
+                    "src": "./assets/icon/logo_192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "related_applications": [
+        {
+            "platform": "webapp",
+            "url": "https://metachat.plus/m/manifest.json"
+        }
+    ]
+}

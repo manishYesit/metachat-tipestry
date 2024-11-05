@@ -1,0 +1,2381 @@
+img {
+  filter: unset !important;
+}
+
+input {
+  margin: unset !important;
+}
+
+.imgPreview {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: none;
+  z-index: 99999;
+  position: absolute;
+  background: rgba(1, 1, 1, 0.8);
+}
+
+.imgPreview .cross {
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+  filter: brightness(0.5) invert(1) !important;
+}
+
+.imgPreview .previewBox {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  transform: scale(0.8);
+  justify-content: center;
+}
+
+.imgPreview .previewBox>img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.tipContainer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 99999;
+  position: fixed;
+  font-weight: 500;
+  background: #fff;
+  box-sizing: border-box !important;
+  box-shadow: 0px 0px 1px 1px #d8d8d8;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.tipContainer .mainMetaBox {
+  display: flex;
+  height: calc(100% - 40px);
+}
+
+.tipContainer .mainMetaBox .leftMetaBox {
+  overflow: auto;
+  min-width: 350px;
+}
+
+.tipContainer .mainMetaBox .rightMetaBox {
+  position: relative;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  border-left: 1px solid #ececec;
+}
+
+.tipContainer .mainMetaBox .chatRoomData {
+  display: none;
+  position: relative;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  border-left: 1px solid #ececec;
+}
+
+.tipContainer .mainMetaBox .presetsBox {
+  display: none;
+  position: relative;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  border-left: 1px solid #ececec;
+}
+
+.tipContainer .mainMetaBox .tipChatTab {
+  display: flex;
+  font-size: 14px;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif !important;
+  gap: 1px;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabBox {
+  padding: 5px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  width: -moz-available;
+  background: #dfecfd;
+  justify-content: center;
+  width: -webkit-fill-available;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabAIBox {
+  position: relative;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabAIBox .tipTabAIIcon {
+  top: 0px;
+  right: 5px;
+  bottom: 0px;
+  margin: auto;
+  height: 15px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 3px;
+  background: #32c932;
+  filter: brightness(0.8) invert(1) !important;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabAIBox .tipChatTabRoomCount {
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  padding: 2px;
+  z-index: 999;
+  height: 20px;
+  color: #fff;
+  display: none;
+  font-size: 9.5px;
+  font-weight: 600;
+  background: red;
+  position: absolute;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabAIBox .tipChatTabRoomCount.comment {
+  background: grey;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipTabAIMenu {
+  top: 25px;
+  right: 5px;
+  padding: 5px;
+  display: none;
+  min-width: 80px;
+  z-index: 9999999;
+  border-radius: 8px;
+  position: absolute;
+  background: #e4e1e8;
+  flex-direction: column;
+  box-shadow: 0px 0px 2px 0px gray;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipTabAIMenu>tip-span {
+  color: #333;
+  display: block;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: #f9fafbb5;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipTabAIMenu>tip-span.active {
+  color: #fff;
+  background: #b84cb3;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipTabAIMenu>tip-span:hover {
+  color: #fff;
+  background: #b84cb3;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabBox:hover {
+  background: #9e9e9e57;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabBox.active {
+  pointer-events: none;
+  box-shadow: inset 0px -4px 0px 0px #1a81f7bf;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle {
+  display: flex;
+  color: #333;
+  font-size: 14px;
+  z-index: 999999;
+  font-weight: 500;
+  position: sticky;
+  padding: 5px 20px;
+  margin-bottom: 5px;
+  align-items: center;
+  background: #effddf;
+  justify-content: space-between;
+  border-top: 1px solid #80808036;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .VoteBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .VoteBox>img.active {
+  filter: unset !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .VoteBox .upVote {
+  cursor: pointer;
+  filter: grayscale(1) !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .VoteBox .downVote {
+  cursor: pointer;
+  filter: grayscale(1) !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .commentSort {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .commentSort .commentSortText {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .commentSort .commentSortText>img {
+  height: 15px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .commentSort>img {
+  height: 25px;
+  cursor: pointer;
+  box-shadow: 0px 0px 1px 1px #7092be;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .commentTitle .commentSort>img.active {
+  filter: brightness(1) invert(1) !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle {
+  top: 0;
+  padding: 5px;
+  display: flex;
+  color: #333;
+  font-size: 14px;
+  z-index: 999999;
+  font-weight: 500;
+  position: sticky;
+  margin-bottom: 5px;
+  flex-direction: row;
+  align-items: center;
+  background: #effddf;
+  justify-content: center;
+  text-transform: uppercase;
+  border-top: 1px solid #80808036;
+  font-family: 'Poppins', sans-serif !important;
+  gap: 10px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .VoteBox {
+  left: 15px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 10px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .VoteBox>img.active {
+  filter: unset !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .VoteBox .upVote {
+  cursor: pointer;
+  filter: grayscale(1) !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .VoteBox .downVote {
+  cursor: pointer;
+  filter: grayscale(1) !important;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .chatRoomJoin {
+  cursor: pointer;
+  color: #3a6dc5;
+  padding: 0px 10px;
+  border-radius: 20px;
+  text-transform: none;
+  box-shadow: 0px 0px 2px 1px #3a6dc5;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .loading {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100px;
+  position: absolute;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat {
+  height: auto;
+  display: block;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomToggleMyChat {
+  padding: 5px;
+  display: flex;
+  color: #000;
+  font-size: 12px;
+  align-items: center;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomToggleMyChat>img {
+  height: 15px;
+  cursor: pointer;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox {
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList {
+  padding: 5px 8px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList.unread:before {
+  width: 5px;
+  right: 6px;
+  height: 5px;
+  bottom: 8px;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  background: rgb(58 109 197);
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListProfile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent {
+  display: flex;
+  width: -moz-available;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListRoom {
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListData {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListData .chatRoomMyChatListUser {
+  font-size: 10px;
+  color: #3a6dc5;
+  text-wrap: nowrap;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListData .chatRoomMyChatListMessage {
+  color: gray;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListTime {
+  width: 100%;
+  color: gray;
+  display: flex;
+  font-size: 9.5px;
+  font-weight: 600;
+  text-align: right;
+  font-family: arial;
+  white-space: nowrap;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListTime>tip-span {
+  padding: 2px;
+  display: flex;
+  color: #fff;
+  min-width: 18px;
+  background: red;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.tipHeaderBox {
+  display: flex;
+  align-items: center;
+  background: #7092be;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+}
+
+.tipHeaderBox .headerBoxLeft {
+  padding: 5px;
+  min-width: 350px;
+}
+
+.tipHeaderBox .headerBoxRight {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.tipHeaderBox .headerBoxRight .headerLabel {
+  font-size: 14px;
+  color: #ffffff;
+  text-wrap: nowrap !important;
+}
+
+.tipHeaderBox .headerBoxRight .headerSiteIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+.tipHeaderBox .headerBoxRight .headerSiteURL {
+  font-size: 14px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.tipHeaderBox .headerBoxRight .tipBottom {
+  height: 25px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 5px;
+  transform: rotate(180deg);
+  filter: brightness(0) invert(1) !important;
+}
+
+.tipHeaderBox .headerBoxRight .tipHome {
+  height: 25px;
+  cursor: pointer;
+  margin-right: 5px;
+  filter: brightness(0) invert(1) !important;
+}
+
+.tipHeaderBox .headerBoxRight .tipUser {
+  height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.userDialog {
+  left: 0;
+  right: 0;
+  top: 130px;
+  width: 300px;
+  margin: auto;
+  display: flex;
+  z-index: 9999999;
+  position: absolute;
+  padding: 25px 20px;
+  border-radius: 5px;
+  visibility: hidden;
+  height: fit-content;
+  flex-direction: column;
+  background-color: #FFF;
+  box-shadow: 0px 0px 1.5px 1.5px #d8d8d8;
+  gap: 5px;
+}
+
+.userClose {
+  top: 7px;
+  right: 7px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  background-image: url('/assets/image/cross.png');
+  background-size: cover;
+}
+
+.userDialog .dialogLabel {
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.userDialog .inputLabel {
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.userDialog>input {
+  height: 30px;
+  color: #333;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #fff;
+  border: 1px solid #998d8d66;
+  font-size: 12px !important;
+}
+
+.userDialog.inputMargin>input {
+  margin-bottom: 5px !important;
+}
+
+.userDialog>input:focus {
+  outline: none;
+  border: 1px solid #557edd;
+}
+
+.userDialog .captchaBox {
+  display: flex;
+  margin-top: 5px;
+  width: -moz-available;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+.userDialog .validated {
+  display: none;
+  font-size: 10px;
+  color: #333333c9;
+  align-items: center;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.userDialog .validated>img {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.userDialog .quizBox {
+  display: flex;
+  font-size: 10px;
+  color: #333333c9;
+  align-items: center;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.userDialog .captchaBox .quizBox>img {
+  width: 50%;
+  padding: 2px;
+  border-radius: 5px;
+  pointer-events: none;
+  border: 1px solid #eee;
+}
+
+.userDialog .captchaBox .quizBox .reload {
+  padding: 0;
+  width: 20px;
+  border: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.userDialog .captchaBox .quizBox>input {
+  width: 50%;
+  height: 30px;
+  outline: none;
+  color: #333;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #fff;
+  font-size: 12px !important;
+  border: 1px solid #998d8d66;
+}
+
+.userDialog .rememberBox {
+  display: flex;
+  font-size: 10px;
+  margin-top: 5px;
+  color: #333333c9;
+  align-items: center;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.userDialog .rememberBox>input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid #000 !important;
+}
+
+.userDialog .rememberBox>input[type="checkbox"]:checked {
+  appearance: auto;
+  accent-color: #000;
+}
+
+.userDialog .rememberBox>tip-span {
+  margin: auto;
+  margin-left: 0px;
+}
+
+.userDialog .rememberBox>tip-span>a {
+  color: #3a6dc5;
+  text-decoration: none;
+}
+
+.userDialog>button {
+  color: #FFF;
+  border: none;
+  height: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-top: 15px;
+  background-image: linear-gradient(90deg, #58cfe5, #9e09e9);
+}
+
+.userDialog .google-btn iframe {
+  margin: auto !important;
+}
+
+.userDialog .rememberBox>a {
+  font-size: 10px;
+  color: #3a6dc5;
+  text-decoration: none;
+}
+
+.userDialog>button:hover {
+  box-shadow: #d8d8d8 0px 0px 1px 1px;
+}
+
+.userLink {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.userLoginLink {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.userLink>a,
+.userLoginLink>a {
+  cursor: pointer !important;
+  color: #3a6dc5 !important;
+  text-decoration: none !important;
+}
+
+.profileBox {
+  left: 0;
+  right: 0;
+  top: 130px;
+  width: 350px;
+  margin: auto;
+  display: flex;
+  z-index: 9999999;
+  position: absolute;
+  padding: 20px 20px;
+  border-radius: 5px;
+  visibility: hidden;
+  align-items: center;
+  height: fit-content;
+  flex-direction: column;
+  background-color: #FFF;
+  box-shadow: 0px 0px 1.5px 1.5px #d8d8d8;
+  gap: 10px;
+}
+
+.profileBox .cross {
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.profileBox>img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+}
+
+.profileBox .userDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileBox .userDetails .name {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.profileBox .userDetails .username {
+  color: #3a6dc5;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profileBox .userDetails>button {
+  border: none;
+  color: #FFF;
+  margin-top: 5px;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #bd2525;
+}
+
+.profileBox .userDetails .message {
+  display: none;
+  margin-top: 5px;
+  font-size: 12px;
+  color: #c41e29;
+}
+
+.profileBox .otherInfo {
+  display: flex;
+  row-gap: 5px;
+  color: #000;
+  font-size: 12px;
+  padding: 5px 0px;
+  font-weight: 500;
+  border: 1px dashed;
+  text-align: center;
+  align-items: center;
+  width: -moz-available;
+  flex-direction: column;
+  justify-content: center;
+  width: -webkit-fill-available;
+}
+
+.profileBox .otherInfo>button {
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #3a6dc5;
+}
+
+.profileBox .userBtnBox {
+  display: flex;
+  flex-direction: row;
+  width: -moz-available;
+  justify-content: center;
+  width: -webkit-fill-available;
+  gap: 10px;
+}
+
+.profileBox .userBtnBox>button {
+  color: #FFF;
+  border: none;
+  width: 95px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: #3a6dc5;
+}
+
+.profileBox .userBtnBox>button:hover {
+  box-shadow: #d8d8d8 0px 0px 1px 1px;
+}
+
+.profileMenu {
+  top: 45px;
+  right: 5px;
+  display: flex;
+  padding: 10px;
+  min-width: 200px;
+  z-index: 9999999;
+  position: absolute;
+  border-radius: 5px;
+  visibility: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #FFF;
+  box-shadow: 0px 0px 1px 1px #d8d8d8;
+  gap: 10px;
+}
+
+.profileMenu ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  list-style: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.profileMenu ul li {
+  padding: 5px;
+  display: flex;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  align-items: center;
+  list-style-type: none;
+  gap: 5px;
+}
+
+.profileMenu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.profileMenu ul li>img {
+  width: 25px;
+  height: 25px;
+}
+
+.tipCheckOuter {
+  display: flex;
+  font-size: 10px;
+  color: #333333c9;
+  align-items: center;
+  width: -moz-available;
+  padding: 0px 0px 5px 0px;
+  width: -webkit-fill-available;
+  border-bottom: 1px solid #dddddd;
+  gap: 5px;
+}
+
+.tipInputOuter {
+  display: flex;
+  align-items: center;
+}
+
+.tipCheckOuter>input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid #000 !important;
+}
+
+.tipCheckOuter>input[type="checkbox"]:checked {
+  appearance: auto;
+  accent-color: #000;
+}
+
+.tipFooterBox {
+  bottom: 10px;
+  z-index: 999;
+  display: flex;
+  margin: 0px 20px;
+  padding: 5px 10px;
+  position: absolute;
+  border-radius: 20px;
+  align-items: center;
+  width: -moz-available;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  border: 1px solid #dddddd;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.tipFooterBox .chatRoomFooterTool {
+  height: auto;
+  display: none;
+  padding: 5px 15px;
+  margin-top: 2.5px;
+  align-items: center;
+  background: #ddedfc;
+  width: -moz-available;
+  border-top-left-radius: 10px;
+  width: -webkit-fill-available;
+  border-top-right-radius: 10px;
+  gap: 20px;
+}
+
+.tipFooterBox .chatRoomFooterTool>tip-span {
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.tipFooterBox .chatRoomFooterTool>[data-value="**"] {
+  font-weight: 700 !important;
+  font-family: monospace !important;
+}
+
+.tipFooterBox .chatRoomFooterTool>[data-value="__"] {
+  font-style: italic !important;
+  font-family: monospace !important;
+}
+
+.tipFooterBox .chatRoomFooterTool>[data-value="~~"] {
+  text-decoration: line-through !important;
+  font-family: monospace !important;
+}
+
+.tipFooterBox .chatRoomFooterReply {
+  height: auto;
+  padding: 5px;
+  display: none;
+  padding-left: 10px;
+  background: #ececec;
+  width: -moz-available;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  width: -webkit-fill-available;
+  gap: 10px;
+}
+
+.tipFooterBox .chatRoomFooterReply .tipReplyContainer {
+  opacity: 0.9;
+  display: flex;
+  font-size: 11px;
+  padding-left: 10px;
+  pointer-events: none;
+  flex-direction: column;
+  word-break: break-word;
+  border-left: 3px solid #3a6dc5;
+  gap: 8px;
+}
+
+.tipFooterBox .chatRoomFooterReply .tipReplyContainer .tipReplyMessage>a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.tipFooterBox .chatRoomFooterReply .tipReplyContainer .tipReplyMessage>img,
+.tipFooterBox .chatRoomFooterReply .tipReplyContainer .tipReplyMessage>video {
+  height: auto;
+  max-height: 100px;
+  border-radius: 8px;
+}
+
+.tipFooterBox .chatRoomFooterReply .tipReplyContainer .tipReplyUser {
+  display: flex;
+  font-size: 9px;
+  gap: 10px;
+}
+
+.tipFooterBox .chatRoomFooterReply>img {
+  height: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.tipFooterBox .chatRoomFooterReply.only {
+  z-index: 9999;
+  margin-top: 2.5px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tipFooterBox .chatRoomFooterInput {
+  display: flex;
+  align-items: center;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.tipFooterBox.metaChat {
+  align-items: unset;
+}
+
+.tipInput {
+  width: 100%;
+  height: 30px;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #fff;
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+textarea.tipInput {
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  resize: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  background-color: #f4f4f4;
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.tipInput:focus {
+  border: none;
+  outline: none;
+}
+
+.tipInputFile {
+  display: none !important;
+}
+
+.tipAISend {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-image: url('/assets/image/send-button.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipAISend.active {
+  filter: brightness(1) invert(1);
+}
+
+.tipMedia {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background-image: url('/assets/image/attachment.png');
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipSend {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url('/assets/image/send-button.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipSend.active {
+  filter: brightness(1) invert(1);
+}
+
+.tipEditClose {
+  width: 30px;
+  height: 30px;
+  display: none;
+  cursor: pointer;
+  background-image: url('/assets/image/cross.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipEmoji {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url('/assets/image/emoji.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipEditor {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-image: url('/assets/image/font.png');
+  background-size: 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tipEditor.open {
+  background-image: url('/assets/image/down-arrow.png');
+}
+
+.tipEmoji.open {
+  background-image: url('/assets/image/down-arrow.png');
+}
+
+.tipEmojiBox {
+  right: 20px;
+  width: 420px;
+  bottom: 55px;
+  z-index: 9999;
+  height: 200px;
+  position: absolute;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+}
+
+.tipEmojiBox .tipEmojiInner {
+  margin: 5px;
+  bottom: 35px;
+  height: 153px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  position: absolute;
+  width: -moz-available;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: -webkit-fill-available;
+  gap: 4px;
+}
+
+.tipEmojiBox .tipEmojiFilter {
+  bottom: 0px;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  position: absolute;
+  border-radius: 20px;
+  background: #3a6dc5;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.tipEmojiBox .tipEmojiFilter .tipEmojiInput {
+  height: 20px;
+  color: #333;
+  font-weight: 500;
+  padding: 0px 10px;
+  border-radius: 20px;
+  border: none !important;
+  outline: none !important;
+  font-size: 10px !important;
+  font-family: Poppins, sans-serif !important;
+}
+
+.tipEmojiBox .tipEmojiFilter .tipEmojiSearch {
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) invert(1) !important;
+}
+
+.tipEmojiBox .tipEmojiInner .tipNoEmojiBox {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tipEmojiBox .tipEmojiInner .tipNoEmojiBox .tipNoEmoji {
+  color: gray;
+  font-size: 50px;
+}
+
+.tipEmojiBox .tipEmojiInner .tipNoEmojiBox .tipNoTextEmoji {
+  color: gray;
+  font-size: 12px;
+}
+
+.tipEmojiBox .tipEmojiInner .tipEmojiIcon {
+  width: 23px;
+  height: 23px;
+  color: #000;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  background: #e6e6e682;
+  justify-content: center;
+}
+
+.tipInnerCard {
+  height: auto;
+  display: flex;
+  overflow: auto;
+  width: -moz-available;
+  scroll-behavior: smooth;
+  width: -webkit-fill-available;
+  max-height: calc(100% - 143px);
+  flex-direction: column-reverse;
+}
+
+.tipInnerCard.maxHeight {
+  padding-bottom: 30px;
+  box-sizing: unset !important;
+  max-height: calc(100% - 160px);
+}
+
+.tipInnerCard.CommentMaxHeight {
+  padding-bottom: 30px;
+  flex-direction: column;
+  box-sizing: unset !important;
+  max-height: calc(100% - 160px);
+}
+
+.tipInnerCard.PresetsMaxHeight {
+  max-height: calc(100% - 50px);
+}
+
+.tipInnerCard .loadMore {
+  left: 0;
+  right: 0;
+  top: 75px;
+  margin: auto;
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 999999;
+  font-size: 12px;
+  padding: 5px 10px;
+  position: absolute;
+  width: max-content;
+  border-radius: 20px;
+  background: #3a6dc5;
+  box-shadow: 0px 0px 2px 1px #3a6dc5;
+}
+
+.tipInnerCard .tipMetaChat {
+  gap: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px 20px 5px;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipMetaChat>tip-div {
+  padding: 10px;
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 8px;
+  word-break: break-word;
+  max-width: calc(100% - 45px);
+}
+
+.tipInnerCard .tipMetaChat .span-left {
+  color: #333;
+  margin-right: auto;
+  background: #ececec;
+}
+
+.tipInnerCard .tipMetaChat .span-right {
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat {
+  gap: 8px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 1.5px;
+  /* padding-bottom: 5px; */
+  flex-direction: column;
+}
+
+.tipInnerCard .tipUserChat>tip-div {
+  padding: 10px;
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 8px;
+  word-break: break-word;
+  max-width: calc(100% - 60px);
+}
+
+.tipInnerCard .tipUserChat .span-right {
+  color: #fff;
+  margin-left: auto;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat .span-left {
+  color: #333;
+  display: flex;
+  margin-right: auto;
+  line-height: unset;
+  flex-direction: row;
+  padding: unset !important;
+  gap: 2px;
+}
+
+.tipInnerCard .tipUserChat .span-left .chatIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span {
+  display: flex;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatName {
+  display: flex;
+  font-size: 8px;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatName .chatDateTime {
+  color: #999;
+  font-size: 7px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatContent {
+  line-height: 18px;
+  border-radius: 8px;
+  margin-left: 10px;
+  position: relative;
+  background: #ececec;
+  padding: 5px 10px !important;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatContent.media {
+  min-width: 50px;
+  max-width: 250px;
+  padding: 5px !important;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatContent.media>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatContent::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .chat-center {
+  margin: auto;
+  color: #333;
+  font-size: 10px;
+  border-radius: 20px;
+  padding: 2.5px 10px;
+  background: #34c3691f;
+}
+
+.tipInnerCard .tipUserChat .chat-left {
+  color: #333;
+  display: flex;
+  font-size: 12px;
+  margin-right: auto;
+  line-height: unset;
+  flex-direction: row;
+  padding: unset !important;
+  gap: 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left .chatIcon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #bcbcbc;
+}
+
+.tipInnerCard .tipUserChat .chat-left .chatIcon>img {
+  height: 100%;
+  width: inherit;
+  border-radius: 50%;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatName {
+  display: flex;
+  font-size: 9px;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatName .chatDateTime {
+  color: #999;
+  font-size: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption {
+  width: 5px;
+  display: flex;
+  padding-top: 2.5px;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu {
+  top: -25px;
+  left: 13px;
+  max-width: auto;
+  min-width: 70px;
+  height: auto;
+  z-index: 999;
+  padding: 5px;
+  display: none;
+  min-height: 45px;
+  position: absolute;
+  border-radius: 3px;
+  background: #ececec;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px 1px #adadada3;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu.right {
+  left: unset;
+  right: auto;
+  margin-top: 4px;
+  margin-right: 13px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu.right::before {
+  left: unset;
+  right: -5px;
+  border-left: unset;
+  border-bottom: unset;
+  border-top: 1px solid #adadada3;
+  border-right: 1px solid #adadada3;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu::before {
+  top: 30px;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  position: absolute;
+  background: #ececec;
+  transform: rotate(45deg);
+  border-left: 1px solid #adadada3;
+  border-bottom: 1px solid #adadada3;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu .menuOption {
+  z-index: 9999;
+  cursor: pointer;
+  padding: 0px 5px;
+  text-wrap: nowrap;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu .menuOption:hover {
+  color: white;
+  border-radius: 3px;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption>img {
+  height: 15px;
+  cursor: pointer;
+  filter: contrast(10%) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent {
+  display: flex;
+  line-height: 18px;
+  border-radius: 8px;
+  margin-left: 10px;
+  position: relative;
+  background: #ececec;
+  flex-direction: column;
+  padding: 5px 10px !important;
+  gap: 10px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent a {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent a:hover {
+  color: #0a58ca !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .chatContentText a {
+  color: #0000ff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .chatContentText a:hover {
+  color: #0000ff !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .chatContentText.active a {
+  color: #800080;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .chatContentText.active a:hover {
+  color: #800080 !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent.self {
+  background: #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent.self::before {
+  border-top: 25px solid #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .deleted {
+  color: gray;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .replyChatBox {
+  height: auto;
+  padding: 5px;
+  display: flex;
+  font-size: 11px;
+  margin-bottom: 5px;
+  pointer-events: none;
+  width: -moz-available;
+  flex-direction: column;
+  word-break: break-word;
+  background: #d1cdcd82;
+  width: -webkit-fill-available;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 3px solid #3a6dc5;
+  gap: 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .replyChatBox a {
+  color: #333;
+  text-decoration: none;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .replyChatBox img,
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .replyChatBox video {
+  max-width: 240px;
+  border-radius: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .replyChatBox .replyChatUser {
+  font-size: 9px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox,
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatMedia .voteBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .voteUpBox {
+  height: 15px;
+  cursor: pointer;
+  transform: rotate(180deg);
+  filter: brightness(0) invert(0) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .voteUpBox.active {
+  filter: brightness(2) invert(1) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .voteDownBox {
+  height: 15px;
+  cursor: pointer;
+  margin-top: 2.5px;
+  filter: brightness(0) invert(0) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .voteDownBox.active {
+  filter: unset !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .replyCount {
+  display: flex;
+  cursor: pointer;
+  margin-left: 5px;
+  color: #3a6dc5;
+  align-items: center;
+  gap: 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .replyCount>img {
+  height: 10px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .replyCount>img.active {
+  transform: rotate(180deg);
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .TipBox,
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatMedia .voteBox .TipBox {
+  display: flex;
+  text-wrap: nowrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .voteBox .TipBox>img,
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatMedia .voteBox .TipBox>img {
+  height: 20px;
+  border-radius: 50%;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatBoxReply {
+  display: flex;
+  margin-top: 8px;
+  padding-left: 10px;
+  flex-direction: column;
+  border-left: 2px solid #7092be;
+  gap: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia {
+  display: flex;
+  min-width: 50px;
+  max-width: 250px;
+  min-height: 35px;
+  margin-left: 10px;
+  border-radius: 8px;
+  position: relative;
+  background: #ececec;
+  flex-direction: column;
+  padding: 5px !important;
+  gap: 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia .replyChatBox {
+  height: auto;
+  padding: 5px;
+  display: flex;
+  font-size: 11px;
+  margin-bottom: 5px;
+  pointer-events: none;
+  width: -moz-available;
+  flex-direction: column;
+  word-break: break-word;
+  background: #d1cdcd82;
+  width: -webkit-fill-available;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 3px solid #3a6dc5;
+  gap: 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia.self {
+  background: #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia.self::before {
+  border-top: 25px solid #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia>tip-span {
+  position: relative;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia:hover .videoPlay {
+  display: block;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia .videoPlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  display: none;
+  cursor: pointer;
+  z-index: 9999;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia .chatFile {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 35px;
+  padding-left: 5px;
+  padding-right: 30px;
+  align-content: center;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia a>img.chatImage-child-1 {
+  right: 5px;
+  bottom: 7px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px !important;
+  height: 20px !important;
+  box-shadow: 0px 0px 4px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia a>img.chatImage-child-1:hover {
+  box-shadow: 0px 0px 6px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .chat-right {
+  color: #333;
+  font-size: 12px;
+  margin-left: auto;
+  line-height: unset;
+  padding: unset !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatName {
+  display: flex;
+  font-size: 8px;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatName .chatDateTime {
+  color: #999;
+  font-size: 7px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption {
+  width: 5px;
+  display: flex;
+  padding-top: 2.5px;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu {
+  top: auto;
+  right: auto;
+  width: 70px;
+  height: auto;
+  padding: 5px;
+  display: none;
+  z-index: 999999;
+  margin-top: 4px;
+  position: absolute;
+  margin-right: 13px;
+  border-radius: 3px;
+  background: #ececec;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px 1px #adadada3;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu::before {
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  right: -5px;
+  position: absolute;
+  background: #ececec;
+  transform: rotate(45deg);
+  border-top: 1px solid #adadada3;
+  border-right: 1px solid #adadada3;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu .menuOption {
+  z-index: 9999;
+  cursor: pointer;
+  padding: 0px 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu .menuOption:hover {
+  color: white;
+  border-radius: 3px;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption>img {
+  height: 15px;
+  cursor: pointer;
+  filter: contrast(10%) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatContent {
+  color: #FFF;
+  line-height: 18px;
+  border-radius: 8px;
+  position: relative;
+  background: #3a6dc5;
+  padding: 5px 10px !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatContent>a {
+  color: #fff;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatContent .deleted {
+  color: #d2d2d2;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia {
+  display: flex;
+  color: #333;
+  min-width: 50px;
+  min-height: 35px;
+  position: relative;
+  border-radius: 8px;
+  background: #ececec;
+  flex-direction: column;
+  padding: 5px !important;
+  justify-content: center;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia a.chatImage-child-2 {
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia a.chatImage-child-2 img {
+  width: 100%;
+  height: 100%;
+  position: initial !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia:hover .videoPlay {
+  display: block;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia .videoPlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  display: none;
+  cursor: pointer;
+  z-index: 999999;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia .chatFile {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 20px;
+  align-content: center;
+  padding-left: 5px !important;
+  padding-right: 30px !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>a>img.chatImage-child-1 {
+  right: 8px;
+  bottom: 8px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px !important;
+  height: 20px !important;
+  box-shadow: 0px 0px 4px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>a>img.chatImage-child-1:hover {
+  box-shadow: 0px 0px 6px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .message-loading {
+  padding: 0;
+  margin-left: 10px;
+  position: relative;
+}
+
+.tipInnerCard .tipUserChat .message-loading::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .message-loading img {
+  width: auto;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 8px;
+  object-position: left;
+}
+
+/* width */
+textarea.tipInput::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+textarea.tipInput::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+/* width */
+.tipEmojiInner::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.tipEmojiInner::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+/* width */
+.tipInnerCard::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.tipInnerCard::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+/* width */
+.tipInnerCard.maxHeight::-webkit-scrollbar,
+.tipInnerCard.CommentMaxHeight::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Handle */
+.tipInnerCard.maxHeight::-webkit-scrollbar-thumb,
+.tipInnerCard.CommentMaxHeight::-webkit-scrollbar-thumb {
+  background: #3a6dc5;
+}
+
+/* width */
+.leftMetaBox::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.leftMetaBox::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+/* width */
+.tipCryptoBox::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.tipCryptoBox::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.reportBox {
+  left: 0;
+  right: 0;
+  top: 150px;
+  width: 225px;
+  margin: auto;
+  display: flex;
+  background: red;
+  padding: 5px 10px;
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.5px 1.5px #d8d8d8;
+}
+
+.reportBox .reportBoxLabel {
+  font-size: 10px;
+  color: #646464;
+  font-weight: 600;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ececec;
+}
+
+.reportBox .reportOptLabel {
+  font-size: 10px;
+  color: #333333;
+  padding-bottom: 5px;
+}
+
+.reportBox .reportOptBox {
+  display: flex;
+  font-size: 10px;
+  color: #333333;
+  align-items: center;
+  margin-bottom: 2.5px;
+  gap: 5px;
+}
+
+.reportBox .reportOptBox>input[type="radio"]:checked {
+  appearance: auto;
+  accent-color: rgb(0, 0, 0);
+}
+
+.reportBox .reportOptBox>input[type="checkbox"]:checked {
+  appearance: auto;
+  accent-color: rgb(0, 0, 0);
+}
+
+.reportBox .reportOptBox>input[type="radio"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 50%;
+  background: transparent;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-image: initial !important;
+  border-color: rgb(0, 0, 0) !important;
+}
+
+.reportBox .reportOptBox>input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  background: transparent;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-image: initial !important;
+  border-color: rgb(0, 0, 0) !important;
+}
+
+.reportBox .tipCryptoBox {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-x: auto;
+  padding: 5px 6px;
+  max-height: 160px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 1px 0px gray;
+  gap: 10px;
+}
+
+.reportBox .tipAmountText {
+  color: red;
+  display: none;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.reportBox .tipAmountBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.reportBox .tipAmountBox>img {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+.reportBox .tipAmountBox>tip-span {
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+.reportBox .tipAmountBox .cryptoInput {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  border: 1px solid #d7d7d7;
+}
+
+.reportBox .tipCryptoBox>tip-span {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0px 0px 1px 1px gray;
+}
+
+.reportBox .tipCryptoBox>tip-span>img {
+  width: inherit;
+  height: inherit;
+}
+
+.reportBox .reportBtnBox {
+  display: flex;
+  margin-top: 5px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  justify-content: flex-end;
+  border-top: 1px solid #ececec;
+  gap: 5px;
+}
+
+.reportBox .reportBtnBox .reportBtn {
+  font-size: 10px;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 2.5px 10px;
+  border-radius: 20px;
+}
+
+.reportBox .reportBtnBox .reportBtn.cancel {
+  background: #bb2124;
+  border: 1px solid #bb2124;
+}
+
+.reportBox .reportBtnBox .reportBtn.submit {
+  background: #3a6dc5;
+  border: 1px solid #3a6dc5;
+}
+
+.alertParent {
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 65px;
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  width: -moz-available;
+  justify-content: space-around;
+  width: -webkit-fill-available;
+}
+
+.alertBox {
+  color: #fff;
+  padding: 8px;
+  font-size: 12px;
+  min-width: 200px;
+  max-width: 250px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #333;
+}
+
+.alertParent.show {
+  display: flex;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animation for alert */
+@keyframes fadein {
+  from {
+    bottom: 15px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 65px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 65px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 15px;
+    opacity: 0;
+  }
+}
+
+/* Animation for Dialog Box */
+@keyframes fadeinDialog {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 130px;
+  }
+}
+
+/* Chat Room List */
+.chatRoomMyChatList:hover {
+  background: #7092be;
+}
+
+.chatRoomMyChatList:hover .chatRoomMyChatListRoom {
+  color: white !important;
+}
+
+.chatRoomMyChatList:hover .chatRoomMyChatListUser {
+  color: white !important;
+}
+
+.chatRoomMyChatList:hover .chatRoomMyChatListMessage {
+  color: white !important;
+}
+
+.chatRoomMyChatList:hover .chatRoomMyChatListTime {
+  color: white !important;
+}
+
+/* Active List */
+.chatRoomMyChatList.active {
+  pointer-events: none;
+  background: rgb(58, 109, 197);
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListRoom {
+  color: white !important;
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListUser {
+  color: white !important;
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListMessage {
+  color: white !important;
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListTime {
+  color: white !important;
+}
+
+.dragDropBox {
+  display: none;
+  z-index: 9999;
+  position: absolute;
+  background: #ffffffd6;
+  margin: 0px 5px 5px 5px;
+  width: -moz-available;
+  border: 2px dashed #333;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  background-image: url('/assets/image/upload.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}

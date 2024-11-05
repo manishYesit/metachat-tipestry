@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirming Your Subscription | MetaChat</title>
+
+    <link href="./assets/image/chat-icon.png" rel="shortcut icon" type="image/x-icon">
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center align-items-center" style="height: 100vh;">
+                <h4 id="msg">Confirming Your Subscription...</h4>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./assets/js/axios.min.js"></script>
+
+<script>
+    async function confirmSubscription() {
+        try {
+            const token = window.localStorage.getItem('token');
+            const txnId = window.localStorage.getItem("txnId");
+
+            if (token && txnId) {
+                const urlParams = new URLSearchParams(window.location.search);
+                if (urlParams.size) {
+                    let status = urlParams.get('status');
+
+                    const body = {
+                        txnId,
+                        status,
+                    };
+
+                    const planData = await axios.post('https://new.tipestry.com/api/user/create-plan', body, {
+                        headers: { "x-auth-token": JSON.parse(token).token },
+                    });
+
+                    localStorage.removeItem("txnId");
+                    document.getElementById('msg').innerHTML = 'Your Payment is successful.';
+
+                    setTimeout(() => {
+                        window.location.href = '/';
+                    }, 2000)
+                } else {
+                    document.getElementById('msg').innerHTML = 'Your Payment is failed.';
+                }
+            } else {
+                document.getElementById('msg').innerHTML = 'Your Payment is failed.';
+            }
+        } catch (error) {
+            console.log(error);
+            document.getElementById('msg').innerHTML = 'Your Payment is failed.';
+        }
+    }
+
+    confirmSubscription();
+</script>
+
+</html>

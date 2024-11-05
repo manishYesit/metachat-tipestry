@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <title>MetaChat</title>
+    <link rel="shortcut icon" href="./assets/icon/logo_48.png" type="image/x-icon">
+
+    <link rel="manifest" href="manifest.json" />
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+
+    <script>
+        if (navigator.serviceWorker.controller) {
+            console.log("Active service worker found");
+        } else {
+            navigator.serviceWorker.register("./service_worker.js")
+                .then(function (registration) { });
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="containerBox">
+            <!-- MetaChat Content -->
+        </div>
+    </div>
+</body>
+
+<script src="./assets/js/axios.min.js"></script>
+<script src="./assets/js/socket.io.js"></script>
+<script src="./module/index.js"></script>
+
+<script>
+    function checkDevice() {
+        if (window.innerWidth > 600) {
+            window.location.href = '/';
+        }
+    }
+
+    checkDevice();
+
+    history.pushState(null, null, '#');
+    window.addEventListener('popstate', function (event) {
+        history.pushState(null, null, '#');
+    });
+</script>
+
+</html>

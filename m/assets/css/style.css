@@ -1,0 +1,1490 @@
+img {
+  filter: unset !important;
+}
+
+input {
+  margin: unset !important;
+}
+
+.tipContainer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 99999;
+  position: fixed;
+  font-weight: 500;
+  background: #fff;
+  box-sizing: border-box !important;
+  box-shadow: 0px 0px 1px 1px #d8d8d8;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.tipContainer .mainMetaBox {
+  height: 100%;
+  display: flex;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox {
+  overflow: auto;
+  width: -moz-available;
+  height: calc(100% - 80px);
+  width: -webkit-fill-available;
+}
+
+.tipContainer .mainMetaBox .rightMetaBox {
+  display: none;
+  position: relative;
+  width: -moz-available;
+  height: calc(100% - 40px);
+  width: -webkit-fill-available;
+  border-left: 1px solid #ececec;
+}
+
+.tipContainer .mainMetaBox .chatRoomData {
+  display: none;
+  position: relative;
+  width: -moz-available;
+  height: calc(100% - 40px);
+  width: -webkit-fill-available;
+  border-left: 1px solid #ececec;
+}
+
+.tipContainer .mainMetaBox .tipChatTab {
+  display: flex;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabBox {
+  padding: 8px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  width: -moz-available;
+  background: #ececec;
+  justify-content: center;
+  width: -webkit-fill-available;
+}
+
+.tipContainer .mainMetaBox .tipChatTab .tipChatTabBox.active {
+  background: #3ac58ed9;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle {
+  top: 0;
+  padding: 8px;
+  display: flex;
+  color: #333;
+  font-size: 14px;
+  z-index: 999999;
+  font-weight: 500;
+  position: sticky;
+  margin-bottom: 5px;
+  flex-direction: row;
+  align-items: center;
+  background: #ececec;
+  justify-content: center;
+  text-transform: uppercase;
+  border-top: 1px solid #80808036;
+  font-family: 'Poppins', sans-serif !important;
+  gap: 10px;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .chatRoomBack {
+  left: 5px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-image: url('../../assets/image/back.png');
+  background-position: center;
+  background-size: contain;
+}
+
+.tipContainer .mainMetaBox .chatRoomData .chatRoomTitle .chatRoomJoin {
+  cursor: pointer;
+  color: #3a6dc5;
+  padding: 0px 10px;
+  border-radius: 20px;
+  text-transform: none;
+  box-shadow: 0px 0px 2px 1px #3a6dc5;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat {
+  height: auto;
+  display: block;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomToggleMyChat {
+  padding: 5px;
+  display: flex;
+  color: #000;
+  font-size: 12px;
+  align-items: center;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomToggleMyChat>img {
+  height: 15px;
+  cursor: pointer;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox {
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList {
+  padding: 5px 8px;
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList.unread:before {
+  width: 5px;
+  right: 6px;
+  height: 5px;
+  bottom: 8px;
+  content: "";
+  border-radius: 50%;
+  position: absolute;
+  background: rgb(58 109 197);
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListProfile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent {
+  display: flex;
+  width: -moz-available;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListRoom {
+  color: #000;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListData {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListData .chatRoomMyChatListUser {
+  font-size: 9px;
+  color: #3a6dc5;
+  text-wrap: nowrap;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListContent .chatRoomMyChatListData .chatRoomMyChatListMessage {
+  color: gray;
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.tipContainer .mainMetaBox .leftMetaBox .chatRoomMyChat .chatRoomMyChatBox .chatRoomMyChatList .chatRoomMyChatListTime {
+  width: 100%;
+  color: gray;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding-top: 3px;
+  text-align: right;
+  font-family: arial;
+  white-space: nowrap;
+}
+
+.tipHeaderBox {
+  display: flex;
+  align-items: center;
+  background: #3a6dc5;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+}
+
+.tipHeaderBox .headerBoxLeft {
+  padding: 5px;
+  width: -moz-available;
+  width: -webkit-fill-available;
+}
+
+.tipHeaderBox .headerBoxRight {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.tipHeaderBox .headerBoxRight .headerSiteIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.tipHeaderBox .headerBoxRight .tipHome {
+  height: 25px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 5px;
+  filter: brightness(0) invert(1) !important;
+}
+
+.tipHeaderBox .headerBoxRight .tipUser {
+  height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.userDialog {
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  z-index: 9999999;
+  padding: 0px 40px;
+  position: absolute;
+  visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  height: calc(100vh - 40px);
+  gap: 20px;
+}
+
+.userClose {
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  background-image: url('../../assets/image/cross.png');
+  background-size: cover;
+}
+
+.userDialog>input {
+  height: 40px;
+  color: #333;
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  border: 1px solid #998d8d;
+  font-size: 12px !important;
+}
+
+.userDialog>input:focus {
+  outline: none;
+  border: 1px solid #557edd;
+}
+
+.userDialog>button {
+  color: #FFF;
+  border: none;
+  height: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: #3a6dc5;
+}
+
+.userDialog>tip-span {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.userDialog>button:hover {
+  box-shadow: #d8d8d8 0px 0px 1px 1px;
+}
+
+.userLink {
+  display: flex;
+  font-size: 12px;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+
+.userLink>a {
+  color: #3a6dc5 !important;
+  text-decoration: none !important;
+}
+
+.profileBox {
+  display: flex;
+  height: inherit;
+  z-index: 9999999;
+  position: absolute;
+  padding: 0px 40px;
+  visibility: hidden;
+  align-items: center;
+  width: -moz-available;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FFF;
+  width: -webkit-fill-available;
+  gap: 20px;
+}
+
+.profileBox .cross {
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  position: absolute;
+}
+
+.profileBox>img {
+  width: 100px;
+  height: 100px;
+}
+
+.profileBox .userDetails {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileBox .userDetails .name {
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.profileBox .userDetails .username {
+  color: #3a6dc5;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.profileBox .otherInfo {
+  display: flex;
+  row-gap: 5px;
+  color: #000;
+  font-size: 14px;
+  padding: 10px 0px;
+  font-weight: 500;
+  border: 1px dashed;
+  text-align: center;
+  align-items: center;
+  width: -moz-available;
+  flex-direction: column;
+  justify-content: center;
+  width: -webkit-fill-available;
+}
+
+.profileBox .otherInfo>button {
+  color: #FFF;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background-color: #3a6dc5;
+}
+
+.profileBox .userBtnBox {
+  display: flex;
+  margin-top: 10px;
+  flex-direction: row;
+  width: -moz-available;
+  justify-content: center;
+  width: -webkit-fill-available;
+  gap: 20px;
+}
+
+.profileBox .userBtnBox>button {
+  color: #FFF;
+  border: none;
+  height: 35px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 20px;
+  width: -moz-available;
+  background-color: #3a6dc5;
+  width: -webkit-fill-available;
+}
+
+.profileBox .userBtnBox>button:hover {
+  box-shadow: #d8d8d8 0px 0px 1px 1px;
+}
+
+.tipCheckOuter {
+  display: flex;
+  font-size: 10px;
+  color: #333333c9;
+  align-items: center;
+  width: -moz-available;
+  padding: 0px 0px 5px 0px;
+  width: -webkit-fill-available;
+  border-bottom: 1px solid #dddddd;
+  gap: 5px;
+}
+
+.tipInputOuter {
+  display: flex;
+  align-items: center;
+}
+
+.tipCheckOuter>input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  background: transparent;
+  border: 1px solid #000 !important;
+}
+
+.tipCheckOuter>input[type="checkbox"]:checked {
+  appearance: auto;
+  accent-color: #000;
+}
+
+.tipFooterBox {
+  bottom: 10px;
+  display: flex;
+  margin: 0px 10px;
+  padding: 5px 7px;
+  position: absolute;
+  border-radius: 10px;
+  align-items: center;
+  width: -moz-available;
+  border: 1px solid #dddddd;
+  width: -webkit-fill-available;
+  gap: 2.5px;
+}
+
+.tipFooterBox.metaChat {
+  align-items: unset;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.tipInput {
+  width: 100%;
+  height: 35px;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: #fff;
+  font-size: 12px !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.tipInput.link {
+  height: 30px;
+}
+
+.tipInput:focus {
+  border: none;
+  outline: none;
+}
+
+.tipInputFile {
+  display: none !important;
+}
+
+.tipMedia {
+  height: 20px;
+  cursor: pointer;
+}
+
+.tipSend {
+  height: 25px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #d1ae39;
+  filter: brightness(1) invert(1) !important;
+}
+
+.tipMedia.open {
+  transform: rotate(90deg);
+}
+
+.tipEmojiBox {
+  left: 10px;
+  right: 10px;
+  bottom: 60px;
+  z-index: 9999;
+  height: 200px;
+  position: absolute;
+  border-radius: 10px;
+  width: -moz-available;
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+  width: -webkit-fill-available;
+}
+
+.tipEmojiBox .tipEmojiInner {
+  margin: 5px;
+  bottom: 40px;
+  height: 150px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  position: absolute;
+  width: -moz-available;
+  align-content: flex-start;
+  justify-content: flex-start;
+  width: -webkit-fill-available;
+  gap: 4px;
+}
+
+.tipEmojiBox .tipEmojiFilter {
+  bottom: 0px;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  position: absolute;
+  border-radius: 5px;
+  align-items: center;
+  background: #ececec;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  gap: 5px;
+}
+
+.tipEmojiBox .tipEmojiFilter .tipEmojiInput {
+  height: 25px;
+  color: #333;
+  font-weight: 500;
+  padding: 0px 10px;
+  border-radius: 5px;
+  border: none !important;
+  outline: none !important;
+  font-size: 10px !important;
+  font-family: Poppins, sans-serif !important;
+}
+
+.tipEmojiBox .tipEmojiFilter .tipEmojiSearch {
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) invert(1) !important;
+}
+
+.tipEmojiBox .tipEmojiInner .tipNoEmojiBox {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tipEmojiBox .tipEmojiInner .tipNoEmojiBox .tipNoEmoji {
+  color: gray;
+  font-size: 50px;
+}
+
+.tipEmojiBox .tipEmojiInner .tipNoEmojiBox .tipNoTextEmoji {
+  color: gray;
+  font-size: 12px;
+}
+
+.tipEmojiBox .tipEmojiInner .tipEmojiIcon {
+  width: 23px;
+  height: 23px;
+  color: #000;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  background: #e6e6e682;
+  justify-content: center;
+}
+
+.tipMicBox {
+  left: 10px;
+  bottom: 55px;
+  padding: 5px;
+  z-index: 9999;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #bbbbbb;
+  border-radius: 34px;
+  gap: 5px;
+}
+
+.tipRecord {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-image: url('../../assets/image/record.png');
+  background-repeat: no-repeat;
+}
+
+.tipPause {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background-image: url('../../assets/image/stop.png');
+  background-repeat: no-repeat;
+}
+
+.tipMicOpacity {
+  opacity: 0.5;
+}
+
+.tipInnerCard {
+  height: auto;
+  overflow: auto;
+  display: flow-root;
+  width: -moz-available;
+  scroll-behavior: smooth;
+  width: -webkit-fill-available;
+  max-height: calc(100% - 125px);
+}
+
+.tipInnerCard.maxHeight {
+  padding-bottom: 20px;
+  box-sizing: unset !important;
+  max-height: calc(100% - 160px);
+}
+
+.tipInnerCard .loadMore {
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 999999;
+  font-size: 10px;
+  margin-top: 10px;
+  padding: 5px 10px;
+  position: absolute;
+  width: max-content;
+  border-radius: 20px;
+  background: #3a6dc5;
+  box-shadow: 0px 0px 2px 1px #3a6dc5;
+}
+
+.tipInnerCard .tipMetaChat {
+  gap: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 10px 5px 5px;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipMetaChat>tip-div {
+  padding: 10px;
+  display: block;
+  font-size: 10px;
+  line-height: 18px;
+  border-radius: 8px;
+  word-break: break-word;
+  max-width: calc(100% - 45px);
+}
+
+.tipInnerCard .tipMetaChat .span-left {
+  color: #333;
+  margin-right: auto;
+  background: #ececec;
+}
+
+.tipInnerCard .tipMetaChat .span-right {
+  cursor: pointer;
+  color: #fff;
+  margin-left: auto;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat {
+  gap: 8px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-top: 1.5px;
+  padding-bottom: 5px;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipUserChat>tip-div {
+  padding: 10px;
+  display: block;
+  font-size: 11px;
+  line-height: 18px;
+  border-radius: 8px;
+  word-break: break-word;
+  max-width: calc(100% - 45px);
+}
+
+.tipInnerCard .tipUserChat .span-right {
+  color: #fff;
+  margin-left: auto;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat .span-left {
+  color: #333;
+  display: flex;
+  margin-right: auto;
+  line-height: unset;
+  flex-direction: row;
+  padding: unset !important;
+  gap: 2px;
+}
+
+.tipInnerCard .tipUserChat .span-left .chatIcon {
+  width: 25px;
+  height: 25px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span {
+  display: flex;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatName {
+  display: flex;
+  font-size: 8px;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatName .chatDateTime {
+  color: #999;
+  font-size: 7px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatContent {
+  line-height: 18px;
+  border-radius: 8px;
+  background: #ececec;
+  padding: 5px 10px !important;
+  position: relative;
+  margin-left: 10px;
+}
+
+.tipInnerCard .tipUserChat .span-left>tip-span .chatContent::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .chat-center {
+  margin: auto;
+  color: #333;
+  font-size: 10px;
+  border-radius: 20px;
+  padding: 2.5px 10px;
+  background: #34c3691f;
+}
+
+.tipInnerCard .tipUserChat .chat-left {
+  color: #333;
+  display: flex;
+  font-size: 9.5px;
+  margin-right: auto;
+  line-height: unset;
+  flex-direction: row;
+  padding: unset !important;
+  gap: 2px;
+}
+
+.tipInnerCard .tipUserChat .chat-left .chatIcon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 1px 1px #bcbcbc;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatName {
+  display: flex;
+  font-size: 8px;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatName .chatDateTime {
+  color: #999;
+  font-size: 7px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption {
+  width: 5px;
+  display: flex;
+  padding-top: 2.5px;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu {
+  top: auto;
+  left: 13px;
+  width: 70px;
+  height: auto;
+  padding: 5px;
+  display: none;
+  z-index: 999999;
+  position: absolute;
+  border-radius: 3px;
+  background: #dfe7f8;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px 1px #adadada3;
+  gap: 2.5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu.right {
+  left: unset;
+  right: auto;
+  margin-top: 4px;
+  margin-right: 13px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu.right::before {
+  left: unset;
+  right: -4px;
+  box-shadow: 1px -1px 1px 0px #adadada3;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu::before {
+  top: 5px;
+  left: -4px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  position: absolute;
+  background: #dfe7f8;
+  transform: rotate(45deg);
+  box-shadow: -1px 1px 1px 0px #adadada3;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu .menuOption {
+  z-index: 9999;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0px 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption .moreVertMenu .menuOption:hover {
+  color: white;
+  border-radius: 3px;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatOption>img {
+  height: 15px;
+  cursor: pointer;
+  filter: contrast(10%) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent {
+  line-height: 18px;
+  border-radius: 8px;
+  margin-left: 10px;
+  position: relative;
+  background: #ececec;
+  padding: 5px 10px !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent>a {
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent>a:hover {
+  color: #0a58ca !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent.self {
+  background: #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent.self::before {
+  border-top: 25px solid #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent .deleted {
+  color: gray;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .messageBox .chatContent::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia {
+  display: flex;
+  min-width: 50px;
+  min-height: 35px;
+  margin-left: 10px;
+  border-radius: 8px;
+  position: relative;
+  background: #ececec;
+  padding: 5px !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia.self {
+  background: #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia.self::before {
+  border-top: 25px solid #f0f8ff;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia a.chatImage-child-2 {
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia a.chatImage-child-2 img {
+  width: 100%;
+  height: 100%;
+  position: initial !important;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia>video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia:hover .videoPlay {
+  display: block;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia .videoPlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  display: none;
+  cursor: pointer;
+  z-index: 999999;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia .chatFile {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 20px;
+  padding-left: 5px;
+  padding-right: 30px;
+  align-content: center;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia>a>img.chatImage-child-1 {
+  right: 8px;
+  bottom: 8px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px !important;
+  height: 20px !important;
+  box-shadow: 0px 0px 4px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .chat-left>tip-span .chatMedia>a>img.chatImage-child-1:hover {
+  box-shadow: 0px 0px 6px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .chat-right {
+  color: #333;
+  font-size: 10px;
+  margin-left: auto;
+  line-height: unset;
+  padding: unset !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatName {
+  display: flex;
+  font-size: 8px;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatName .chatDateTime {
+  color: #999;
+  font-size: 7px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption {
+  width: 5px;
+  display: flex;
+  padding-top: 2.5px;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu {
+  top: auto;
+  right: auto;
+  width: 70px;
+  height: auto;
+  padding: 5px;
+  display: none;
+  z-index: 999999;
+  margin-top: 4px;
+  position: absolute;
+  margin-right: 13px;
+  border-radius: 3px;
+  background: #ececec;
+  flex-direction: column;
+  box-shadow: 0px 0px 1px 1px #adadada3;
+  gap: 3px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu::before {
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  right: -4px;
+  position: absolute;
+  background: #ececec;
+  transform: rotate(225deg);
+  box-shadow: -1px 1px 1px 0px #adadada3;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu .menuOption {
+  z-index: 9999;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0px 5px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption .moreVertMenu .menuOption:hover {
+  color: white;
+  border-radius: 3px;
+  background: #3a6dc5;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatOption>img {
+  height: 15px;
+  cursor: pointer;
+  filter: contrast(10%) !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatContent {
+  color: #FFF;
+  line-height: 18px;
+  border-radius: 8px;
+  position: relative;
+  background: #3a6dc5;
+  padding: 5px 10px !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatContent>a {
+  color: #fff;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .messageBox .chatContent .deleted {
+  color: #d2d2d2;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia {
+  display: flex;
+  color: #333;
+  min-width: 50px;
+  min-height: 35px;
+  max-width: 200px;
+  position: relative;
+  border-radius: 8px;
+  background: #ececec;
+  flex-direction: column;
+  padding: 5px !important;
+  justify-content: center;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia a.chatImage-child-2 {
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia a.chatImage-child-2 img {
+  width: 100%;
+  height: 100%;
+  position: initial !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>video {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia:hover .videoPlay {
+  display: block;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia .videoPlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  margin: auto;
+  display: none;
+  cursor: pointer;
+  z-index: 999999;
+  position: absolute;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia .chatFile {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 20px;
+  align-content: center;
+  padding-left: 5px !important;
+  padding-right: 30px !important;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>a>img.chatImage-child-1 {
+  right: 8px;
+  bottom: 8px;
+  cursor: pointer;
+  position: absolute;
+  border-radius: 50%;
+  width: 20px !important;
+  height: 20px !important;
+  box-shadow: 0px 0px 4px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .chat-right>tip-span .chatMedia>a>img.chatImage-child-1:hover {
+  box-shadow: 0px 0px 6px 0px #000;
+}
+
+.tipInnerCard .tipUserChat .message-loading {
+  padding: 0;
+  margin-left: 10px;
+  position: relative;
+}
+
+.tipInnerCard .tipUserChat .message-loading::before {
+  top: 0;
+  width: 0;
+  height: 0;
+  content: '';
+  left: -10px;
+  z-index: -1;
+  color: #ececec;
+  position: absolute;
+  border-top: 25px solid #ececec;
+  border-left: 25px solid transparent;
+}
+
+.tipInnerCard .tipUserChat .message-loading img {
+  width: auto;
+  height: 38px;
+  object-fit: cover;
+  border-radius: 8px;
+  object-position: left;
+}
+
+/* width */
+.tipEmojiInner::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.tipEmojiInner::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+/* width */
+.tipInnerCard::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.tipInnerCard::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+/* width */
+.leftMetaBox::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Handle */
+.leftMetaBox::-webkit-scrollbar-thumb {
+  background: #e7e9eb;
+}
+
+.reportBox {
+  left: 0;
+  right: 0;
+  top: 150px;
+  margin: auto;
+  display: flex;
+  min-width: 200px;
+  background: red;
+  padding: 5px 10px;
+  width: max-content;
+  position: absolute;
+  border-radius: 5px;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 1.5px 1.5px #d8d8d8;
+}
+
+.reportBox .reportBoxLabel {
+  font-size: 10px;
+  color: #646464;
+  font-weight: 600;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ececec;
+}
+
+.reportBox .reportOptLabel {
+  font-size: 10px;
+  color: #333333;
+  padding-bottom: 5px;
+}
+
+.reportBox .reportOptBox {
+  display: flex;
+  font-size: 10px;
+  color: #333333;
+  align-items: center;
+  margin-bottom: 2.5px;
+  gap: 5px;
+}
+
+.reportBox .reportOptBox>input[type="radio"]:checked {
+  appearance: auto;
+  accent-color: rgb(0, 0, 0);
+}
+
+.reportBox .reportOptBox>input[type="checkbox"]:checked {
+  appearance: auto;
+  accent-color: rgb(0, 0, 0);
+}
+
+.reportBox .reportOptBox>input[type="radio"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 50%;
+  background: transparent;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-image: initial !important;
+  border-color: rgb(0, 0, 0) !important;
+}
+
+.reportBox .reportOptBox>input[type="checkbox"] {
+  width: 12px;
+  height: 12px;
+  bottom: unset;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 2px;
+  background: transparent;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-image: initial !important;
+  border-color: rgb(0, 0, 0) !important;
+}
+
+.reportBox .reportBtnBox {
+  display: flex;
+  margin-top: 5px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  justify-content: flex-end;
+  border-top: 1px solid #ececec;
+  gap: 5px;
+}
+
+.reportBox .reportBtnBox .reportBtn {
+  font-size: 10px;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 2.5px 10px;
+  border-radius: 20px;
+}
+
+.reportBox .reportBtnBox .reportBtn.cancel {
+  background: #bb2124;
+  border: 1px solid #bb2124;
+}
+
+.reportBox .reportBtnBox .reportBtn.submit {
+  background: #3a6dc5;
+  border: 1px solid #3a6dc5;
+}
+
+.alertParent {
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 65px;
+  display: none;
+  position: fixed;
+  z-index: 9999999;
+  width: -moz-available;
+  justify-content: space-around;
+  width: -webkit-fill-available;
+}
+
+.alertBox {
+  color: #fff;
+  padding: 8px;
+  font-size: 12px;
+  min-width: 200px;
+  max-width: 250px;
+  border-radius: 3px;
+  text-align: center;
+  background-color: #333;
+}
+
+.alertParent.show {
+  display: flex;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animation for alert */
+@keyframes fadein {
+  from {
+    bottom: 15px;
+    opacity: 0;
+  }
+
+  to {
+    bottom: 65px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 65px;
+    opacity: 1;
+  }
+
+  to {
+    bottom: 15px;
+    opacity: 0;
+  }
+}
+
+/* Chat Room List */
+.chatRoomMyChatList.active {
+  background: rgb(58, 109, 197);
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListRoom {
+  color: white !important;
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListUser {
+  color: white !important;
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListMessage {
+  color: white !important;
+}
+
+.chatRoomMyChatList.active .chatRoomMyChatListTime {
+  color: white !important;
+}

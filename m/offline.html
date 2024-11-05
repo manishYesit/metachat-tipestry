@@ -1,0 +1,65 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaChat | Offline</title>
+</head>
+<style>
+    body {
+        margin: 0;
+    }
+
+    .opps {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        gap: 15px 0px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .opps h1 {
+        margin: 0;
+        font-size: 24px;
+    }
+
+    .opps p {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .opps a {
+        font-size: 16px;
+        background: #d8b9c3;
+        text-decoration: none !important;
+        color: #000;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <div class="opps">
+        <h1>You're Offline</h1>
+        <p>Check your connection and try again</p>
+        <a href="javascript:void(0)" onclick="retry()">Retry</a>
+    </div>
+</body>
+
+<script>
+    function retry() {
+        let status = window.navigator.onLine ? 'on' : 'off';
+
+        if (status) {
+            window.location.reload();
+        }
+    }
+
+    window.addEventListener('online', () => {
+        window.location.reload();
+    });   
+</script>
+
+</html>

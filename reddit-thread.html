@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Thread | MetaChat</title>
+
+    <link rel="shortcut icon" href="./assets/image/chat-icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+
+    <style>
+        li {
+            width: 100%;
+            margin-bottom: 8px;
+            list-style-type: none;
+            background: #eeeeee;
+            padding: 10px 5px 10px 10px;
+        }
+
+        li:hover {
+            background-color: #cccccc;
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #999999;
+        }
+
+        li a {
+            text-decoration: none;
+            display: block;
+            padding: 5px 5px;
+            color: #444444;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .age {
+            font-size: 10px;
+            color: #909090;
+            height: 12px;
+            padding-left: 10px;
+        }
+
+        .score {
+            height: 20px;
+            min-width: 25px;
+            font-size: 14px;
+            text-align: center;
+            display: block;
+            float: left;
+            background: linear-gradient(to bottom, white, #eeeeee);
+            color: #FF3333;
+            margin: 5px 5px 0px 0px;
+            box-shadow: 1px 1px 2px #888888;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container p-5">
+        <div id="links">
+            <p class="text-center">Loading... please wait.</p>
+        </div>
+    </div>
+</body>
+
+<script src="./assets/js/axios.min.js"></script>
+
+<script>
+    // Calculate time units
+    function timeAgo(timestamp) {
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const yesterday = new Date(today);
+        const lastChat = new Date(timestamp);
+
+        yesterday.setDate(today.getDate() - 1);
+
+        if (lastChat >= today) {
+            var hours = lastChat.getHours();
+            var minutes = lastChat.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+
+            const timeString = `${hours}:${minutes < 10 ? "0" : ""}${minutes} ${ampm}`;
+
+            return 'Today ' + timeString;
+        } else if (lastChat >= yesterday) {
+            return "Yesterday";
+        } else {
+            const options = { year: "numeric", month: "short", day: "numeric" };
+            const dateString = lastChat.toLocaleDateString(
+                "en-US",
+                options
+            );
+
+            return dateString;
+        }
+    }
+
+    async function checkThread() {
+        try {
+            let params = new URLSearchParams(window.location.search);
+            let url = params.get('url');
+
+            if (url) {
+                if (url.indexOf("http://") == -1) {
+                    if (url.indexOf("https://") == -1) {
+                        url = 'https://' + url;
+                    }
+                }
+
+                const result = await axios.get('https://www.reddit.com/api/info.json?limit=100&url=' + url);
+
+                if (result.data.data.children.length) {
+                    let post = '';
+                    result.data.data.children.map((item, index) => {
+                        let date = new Date(item.data.created_utc * 1000);
+                        let baseURL = "https://www.reddit.com" + item.data.permalink
+
+                        post += "<li>" +
+                            "<div class='score'>" + item.data.score + "</div>" +
+                            "<a href='" + baseURL + "' title='" + item.data.permalink + "' target='_blank' >" + item.data.title + "</a>" +
+                            "<div class='age'>" + timeAgo(date) + " ,&nbsp;&nbsp;" + item.data.num_comments + " comments," + "&nbsp;&nbsp;r/" + item.data.subreddit + "</div>" +
+                            "</li>"
+                    });
+
+                    document.getElementById("links").innerHTML = post;
+                } else {
+                    document.getElementById("links").innerHTML = '<p class="text-center text-danger">No thread found</p>';
+                }
+            }
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    checkThread();
+</script>
+
+</html>

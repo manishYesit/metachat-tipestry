@@ -74,6 +74,7 @@ input {
 }
 
 .tipContainer .mainMetaBox .rightMetaBox {
+  display: none;
   position: relative;
   width: -moz-available;
   width: -webkit-fill-available;
@@ -89,7 +90,6 @@ input {
 }
 
 .tipContainer .mainMetaBox .presetsBox {
-  display: none;
   position: relative;
   width: -moz-available;
   width: -webkit-fill-available;
@@ -639,8 +639,8 @@ input {
 }
 
 .userDialog .rememberBox>input[type="checkbox"] {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   bottom: unset;
   cursor: pointer;
   appearance: none;

@@ -242,13 +242,13 @@ if (!document.getElementById('tip-ext-container')) {
   tipChatTabRoom.className = 'tipChatTabBox';
   tipChatTabRoomCount.className = 'tipChatTabRoomCount';
   tipChatTabAIBox.className = 'tipChatTabAIBox';
-  tipChatTabAI.className = 'tipChatTabBox active';
+  tipChatTabAI.className = 'tipChatTabBox';
   tipTabAIIcon.className = 'tipTabAIIcon';
   tipTabAIMenu.className = 'tipTabAIMenu';
   tipChatTabCommentBox.className = 'tipChatTabAIBox';
   tipChatTabComment.className = 'tipChatTabBox';
   tipChatTabCommentCount.className = 'tipChatTabRoomCount comment';
-  tipChatTabPresets.className = 'tipChatTabBox';
+  tipChatTabPresets.className = 'tipChatTabBox active';
 
   tipReplyContainer.className = 'tipReplyContainer';
   tipReplyMessage.className = 'tipReplyMessage';
@@ -693,12 +693,9 @@ if (!document.getElementById('tip-ext-container')) {
 
     if (url) {
       changeSite(url);
+      getChatListData(true);
     } else {
-      window.localStorage.setItem('url', window.location.href);
-
-      headerSiteURL.setAttribute('data-url', setURL().href);
-      headerSiteURL.innerText = addEllipsis(setURL().href, true);
-      headerSiteIcon.src = 'https://www.google.com/s2/favicons?sz=32&domain_url=https://' + setURL().host;
+      getChatListData();
     }
 
     if (Object.entries(items).length) {
@@ -709,7 +706,6 @@ if (!document.getElementById('tip-ext-container')) {
 
     IndexedDB('read');
     getSubscription();
-    getChatListData();
     loadRestrictedWords();
     getUserData(token, true);
   });
@@ -751,6 +747,10 @@ if (!document.getElementById('tip-ext-container')) {
 
   // Open URL of chat room 
   $.body.onclick = async function (e) {
+    if (!signUpDialog.contains(e.target) && !userDialog.contains(e.target) && !tipUser.contains(e.target)) {
+      userClose.click();
+    }
+
     if (!userMenu.contains(e.target)) {
       userMenu.style.visibility = 'hidden';
     }
@@ -1903,26 +1903,31 @@ if (!document.getElementById('tip-ext-container')) {
 
   // Open login & profile dialog
   tipUser.onclick = function () {
-    getItem("token").then(function (items) {
-      if (Object.entries(items).length) {
-        token = items.token;
-        getUserData(items.token);
-      } else {
-        loadCaptcha('login');
+    console.log("line 1906", userDialog.style.visibility);
+    
+    if(userDialog.style.visibility == 'hidden'){
+      getItem("token").then(function (items) {
+        if (Object.entries(items).length) {
+          token = items.token;
+          getUserData(items.token);
+        } else {
+          loadCaptcha('login');
 
-        getItem("loginData").then(function (items) {
-          if (Object.entries(items).length) {
-            userEmail.value = items.loginData.email;
-            userPassword.value = atob(items.loginData.password);
+          getItem("loginData").then(function (items) {
+            if (Object.entries(items).length) {
+              userEmail.value = items.loginData.email;
+              userPassword.value = atob(items.loginData.password);
 
-            rememberInput.setAttribute('checked', true);
-          }
-        });
+              rememberInput.setAttribute('checked', true);
+            }
+          });
 
-        userDialog.style.visibility = 'visible';
-        userDialog.style.animation = 'fadeinDialog 0.5s';
-      }
-    });
+          userDialog.style.visibility = 'visible';
+          userDialog.style.animation = 'fadeinDialog 0.5s';
+          console.log("line 1927", userDialog.style.visibility);
+        }
+      });
+    }
   }
 
   // Close login dialog
@@ -1940,14 +1945,6 @@ if (!document.getElementById('tip-ext-container')) {
     captchaQuizBox.style.setProperty('display', 'flex');
     captchaValidateBox.style.setProperty('display', 'none');
   }
-
-  //Added functionality to close user dialog when clicking outside of it
-  $.addEventListener('click', (event) => {
-    if(!userDialog.contains(event.target) && !tipUser.contains(event.target)){
-      userDialog.style.animation = '';
-      userDialog.style.visibility = 'hidden';
-    }
-  })
 
   // Open Sign Up dialog
   newUser.onclick = function () {
@@ -3578,21 +3575,46 @@ if (!document.getElementById('tip-ext-container')) {
         connectSocket();
         getTrendingRoom();
 
-        let host = setURL().host;
+        const extraParam = {
+          headers: token ? { "x-auth-token": token } : {},
+          params: { limit: 1 }
+        };
 
-        const site = await axios.post("https://new.tipestry.com/api/site", {
-          url: host,
-          source: 'metachat'
-        });
+        const data = await axios.get('https://new.tipestry.com/api/chat/trending-room', extraParam);
 
-        siteId = site.data._id;
-        homeSiteId = site.data._id;
+        if (data.data.result.length) {
+          const result = data.data.result[0];
+
+          siteId = result._id;
+          homeSiteId = result._id;
+
+          let url = isValidUrl(result.chat.siteId.url);
+          if (url) {
+            window.localStorage.setItem('url', url);
+          }
+        } else {
+          window.localStorage.setItem('url', window.location.href);
+
+          const site = await axios.post("https://new.tipestry.com/api/site", {
+            url: setURL().host,
+            source: 'metachat'
+          });
+
+          siteId = site.data._id;
+          homeSiteId = site.data._id;
+        }
+
+        const newUrl = '?url=' + setURL().host;
+        window.history.pushState({ url: newUrl }, '', newUrl);
+
+        headerSiteURL.setAttribute('data-url', setURL().href);
+        headerSiteURL.innerText = addEllipsis(setURL().href, true);
+        headerSiteIcon.src = 'https://www.google.com/s2/favicons?sz=32&domain_url=https://' + setURL().host;
 
         getHomeChat();
         getComments();
       } else {
         getMyChat();
-        getHomeChat();
         getTrendingRoom();
       }
     } catch (error) {
@@ -3896,6 +3918,9 @@ if (!document.getElementById('tip-ext-container')) {
 
       chatRoomChat.innerHTML = "";
       chatRoomName.innerText = host;
+
+      const newUrl = '?url=https://' + host;
+      window.history.pushState({ url: newUrl }, '', newUrl);
       headerSiteURL.setAttribute('data-url', href ? href : 'https://' + host);
       headerSiteURL.innerText = href ? addEllipsis(href, true) : 'https://' + host;
       headerSiteIcon.src = 'https://www.google.com/s2/favicons?sz=32&domain_url=https://' + host;
@@ -4386,6 +4411,7 @@ if (!document.getElementById('tip-ext-container')) {
         let time = $.getElementsByClassName('time-' + data.siteId);
 
         if (user.length) {
+          getHomeChat();
           getChatListData(true);
         }
 
@@ -4432,6 +4458,7 @@ if (!document.getElementById('tip-ext-container')) {
         let time = $.getElementsByClassName('time-' + data.siteId);
 
         if (user.length) {
+          getHomeChat();
           getChatListData(true);
         }
 
@@ -6238,7 +6265,6 @@ if (!document.getElementById('tip-ext-container')) {
   }
 
   // Append User Login Dailog
-  // userDialog.appendChild(userClose);
   userDialog.appendChild(dialogLabel);
   userDialog.appendChild(emailLabel);
   userDialog.appendChild(userEmail);
@@ -6348,7 +6374,7 @@ if (!document.getElementById('tip-ext-container')) {
   tipChatTabCommentBox.appendChild(tipChatTabComment);
   tipChatTabCommentBox.appendChild(tipChatTabCommentCount);
   tipChatTab.appendChild(tipChatTabPresets);
-  rightMetaBox.appendChild(tipChatTab);
+  presetsBox.appendChild(tipChatTab);
 
   leftMetaBox.appendChild(chatRoomMyHome);
   leftMetaBox.appendChild(chatRoomMyChat);
@@ -6459,7 +6485,7 @@ if (!document.getElementById('tip-ext-container')) {
   // Add google login button
   window.onload = function () {
     google.accounts.id.initialize({
-      client_id: "70167956137-m4f9d1vj4vicmslucjbjldo4ealvv9ng.apps.googleusercontent.com",
+      client_id: "407539936211-bucrvo27fbsqtmcqgsj7omrb73prjks1.apps.googleusercontent.com",
       callback: handleResponse
     });
 
